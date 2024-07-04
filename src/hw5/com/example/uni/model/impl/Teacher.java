@@ -16,7 +16,7 @@ public class Teacher extends User {
 
 
 
-    public void addGroup(int id){ // убрать в сервис (ошибка проектирования)!!
+    public void addGroupId(int id){ // убрать в сервис (ошибка проектирования)!!
         groups.add(id);
     }
 

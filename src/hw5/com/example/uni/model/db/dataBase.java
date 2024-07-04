@@ -15,7 +15,7 @@ public class dataBase {
 
     public static void fillDB(){
         Teacher teacher = new Teacher(1, "Ivan", "Ivanov");
-        teacher.addGroup(1);
+        teacher.addGroupId(1);
         teachersDB.add(teacher);
 
         Student student = new Student(2, "Vasya", "Petrov", 1);
