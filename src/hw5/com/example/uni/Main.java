@@ -6,7 +6,7 @@ import hw5.com.example.uni.view.TeacherView;
 
 public class Main {
     public static void main(String[] args) {
-//        new StudentView().stat();
-        new TeacherView().Start();
+        new StudentView().stat();
+//        new TeacherView().Start();
     }
 }

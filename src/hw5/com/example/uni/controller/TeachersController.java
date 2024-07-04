@@ -10,8 +10,8 @@ public class TeachersController {
 
 
 
-    public Teacher createTeacher(String fName, String lName){
-        return service.createTeacher(fName, lName);
+    public Teacher createTeacher(String fName, String lName, int groupID){
+        return service.createTeacher(fName, lName, groupID);
     }
 
 

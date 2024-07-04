@@ -7,7 +7,7 @@ import java.util.List;
 
 public class StudentService {
 
-    public Student crateStudent(String fName, String lName, int idgroup) { // только за создание студента (чистый метод)
+    public Student crateStudent(String fName, String lName, int idGroup) { // только за создание студента (чистый метод)
         int id;
         int size = dataBase.studentsDB.size();
         if (size == 0) {
@@ -15,7 +15,7 @@ public class StudentService {
         } else {
             id = size + 1;
         }
-        Student student = new Student(id, fName, lName, idgroup);
+        Student student = new Student(id, fName, lName, idGroup);
         dataBase.studentsDB.add(student);
         return student;
     }

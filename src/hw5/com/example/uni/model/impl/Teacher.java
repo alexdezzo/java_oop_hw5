@@ -9,15 +9,22 @@ public class Teacher extends User {
 
     public final List<Integer> groups = new ArrayList<>();
 
-    public Teacher(int id, String firstName, String lastName) {
+    int groupID; // к какой группе относится учитель
+
+    public Teacher(int id, String firstName, String lastName, int groupID) {
         super(id, firstName, lastName);
+        this.groupID = groupID;
+    }
+
+
+    @Override
+    public String toString() {
+        return String.format(getClass().getSimpleName() + " id = %s, first_name = %s, last_name = %s, GROUP ID: %s", id, firstName, lastName, groupID);
     }
 
 
 
 
-    public void addGroupId(int id){ // убрать в сервис (ошибка проектирования)!!
-        groups.add(id);
-    }
+
 
 }

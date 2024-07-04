@@ -10,15 +10,16 @@ import java.util.Scanner;
 public class TeacherView {
 
     public void Start(){
-        dataBase.fillDB();
+//        dataBase.fillDB();
         Scanner scanner = new Scanner(System.in);
         while (true){
-            System.out.println("1 - создать учителя\n2 - найти учителя по его ID\n3 - отобразить список учителей\n4 - выход");
+            System.out.println("1 - создать учителя\n2 - найти учителя по его ID\n3 - отобразить список учителей\n4 - назад в меню студента\n5 - выход");
             switch (scanner.nextInt()){
                 case 1 -> createTeacher();
                 case 2 -> getById();
                 case 3 -> getAllTeachers();
-                case 4 -> System.exit(0);
+                case 4 -> new StudentView().stat();
+                case 5 -> System.exit(0);
                 default -> System.out.println("Неверная операция");
             }
 
@@ -35,7 +36,9 @@ public class TeacherView {
         String fName = scanner.nextLine();
         System.out.println("Введите фамилию учителя");
         String lName = scanner.nextLine();
-        Teacher teacher = controller.createTeacher(fName, lName);
+        System.out.println("Введите ID учебной группы");
+        int groupID = scanner.nextInt();
+        Teacher teacher = controller.createTeacher(fName, lName, groupID);
         System.out.println(teacher);
         return teacher;
     }

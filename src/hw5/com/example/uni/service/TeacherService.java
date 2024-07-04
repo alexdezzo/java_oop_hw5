@@ -8,7 +8,7 @@ import java.util.List;
 public class TeacherService {
 
 
-    public Teacher createTeacher(String fName, String lName){
+    public Teacher createTeacher(String fName, String lName,int groupID){
         int id;
         int size = dataBase.teachersDB.size();
         if (size == 0){
@@ -17,7 +17,7 @@ public class TeacherService {
             id = size + 1;
         }
 
-        Teacher teacher = new Teacher(id, fName, lName);
+        Teacher teacher = new Teacher(id, fName, lName, groupID);
         dataBase.teachersDB.add(teacher);
         return teacher;
     }
@@ -33,6 +33,11 @@ public class TeacherService {
         }
         return teacher;
     }
+
+//    public void addGroupId(int groupId){ // убрать в сервис (ошибка проектирования)!!
+//        groups.add(groupId);
+//    }
+
 
 
     public List<Teacher> getAllTeachers(){

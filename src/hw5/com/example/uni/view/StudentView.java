@@ -10,21 +10,23 @@ import java.util.Scanner;
 public class StudentView {
 
     public void stat() {
-        dataBase.fillDB();
+//        dataBase.fillDB();
         Scanner scanner = new Scanner(System.in);
         while (true) {
-            System.out.println("1 - создать студентов\n2 - найти студента по его ID\n3 - распечатать инфу по студентам\n4 - выход");
+            System.out.println("1 - создать студентов\n2 - найти студента по его ID\n3 - распечатать инфу по студентам\n4 - Перейти к созданию учителя\n5 - выход");
             switch (scanner.nextInt()) {
                 case 1 -> crateStudent();
                 case 2 -> getById();
                 case 3 -> getAllStudents();
-                case 4 -> System.exit(0);
+                case 4 -> new TeacherView().Start();
+                case 5 -> System.exit(0);
                 default -> System.out.println("Операция не поддерживается");
             }
         }
     }
 
     private StudentController controller = new StudentController();
+//    private TeacherView tv = new TeacherView();
 
     private Student crateStudent() {
         Scanner scanner = new Scanner(System.in);

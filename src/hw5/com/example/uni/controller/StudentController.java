@@ -9,8 +9,8 @@ public class StudentController {
 
     private StudentService service = new StudentService();
 
-    public Student crateStudent(String fName, String lName, int idgroup) {
-        return service.crateStudent(fName, lName, idgroup);
+    public Student crateStudent(String fName, String lName, int idGroup) {
+        return service.crateStudent(fName, lName, idGroup);
 
     }
 
