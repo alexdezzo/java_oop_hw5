@@ -12,15 +12,15 @@ public class StudentsGroup {
     public static List<Student> students;
 
 
-    public StudentsGroup(Teacher teacher, List<Student> students) {
+    public StudentsGroup(int id, Teacher teacher, List<Student> students) {
+        this.id = id;
         this.students = students;
         this.teacher = teacher;
-        StudentsGroup.id = dataBase.studentGroupDB.size()+1;
     }
 
-//    public StudentsGroup(Teacher t){
-//        this.teacher = t;
-//        StudentsGroup.id = dataBase.studentGroupDB.size() + 1;
-//    }
 
+    @Override
+    public String toString() {
+        return String.format(getClass().getSimpleName() + " id группы = %s, Учитель у группы = %s, студенты = %s", id, teacher, students);
+    }
 }

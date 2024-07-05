@@ -14,23 +14,16 @@ public class StudentGroupView {
     public void start(){
         Scanner scanner = new Scanner(System.in);
         while (true){
-            System.out.println("1 - создать учебную группу\n2 - вернуться назад\n3 - выход из программы");
+            System.out.println("1 - создать учебную группу\n2 - показать учебные группы\n3 - вернуться назад\n4 - выход из программы");
             switch (scanner.nextInt()){
                 case 1 -> getStudentGroup();
-                case 2 -> new StudentView().stat();
-                case 3 -> System.exit(0);
+                case 2 -> getAllStudentsGroup();
+                case 3 -> new StudentView().stat();
+                case 4 -> System.exit(0);
                 default -> System.out.println("Операция не поддерживается");
             }
         }
     }
-
-
-//    private StudentsGroup createGroup(){
-//        Scanner scanner = new Scanner(System.in);
-//        System.out.println("Введите ID студента");
-//        int idStudent = scanner.nextInt();
-//        return new StudentsGroup();
-//    }
 
     private StudentsGroup getStudentGroup(){
         Scanner scanner = new Scanner(System.in);
@@ -46,6 +39,13 @@ public class StudentGroupView {
         }
 
         return controller.getStudentGroup(teacherId, sc);
+    }
+
+    private List<StudentsGroup> getAllStudentsGroup() {
+        List<StudentsGroup> studentsGroups = controller.getAllStudentsGroup();
+        System.out.println(studentsGroups);
+        return studentsGroups;
+
     }
 
 }

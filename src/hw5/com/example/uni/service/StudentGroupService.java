@@ -13,41 +13,35 @@ public class StudentGroupService {
 
 
     public StudentsGroup createGroup(Teacher teacher, List<Student> students) {
-//        dataBase.studentGroupDB.add(teacher, students);
-        return new StudentsGroup(teacher, students);
+        int id;
+        int size = dataBase.studentGroupDB.size();
+        if (size == 0) {
+            id = 1;
+        } else {
+            id = size + 1;
+        }
+        StudentsGroup studentsGroup = new StudentsGroup(id, teacher, students);
+        dataBase.studentGroupDB.add(studentsGroup);
+        return studentsGroup;
 
     }
 
-
-//    public addToGroup(Teacher teacher, List<Student> students){
-//        dataBase.studentGroupDB.add();
-//    }
-
-
-    public int getID() {
-        return StudentsGroup.id;
-    }
-
-//    public void addStudents(List<Student> students) {
-//        StudentsGroup.students.addAll(students);
-//    }
-
-    public StudentsGroup getStudentGroup(Teacher teacher, List<Integer> s){
+    public StudentsGroup getStudentGroup(Teacher teacher, List<Integer> s) {
         StudentController studentController = new StudentController();
         List<Student> students = new ArrayList<>();
         for (int i : s) {
             Student student = studentController.getById(i);
             students.add(student);
         }
-
-        System.out.println(teacher);
-        System.out.println(students);
+        System.out.println("Группа создана!");
+//        System.out.println(teacher);
+//        System.out.println(students);
         return createGroup(teacher, students);
     }
 
+    public List<StudentsGroup> getAllStudentsGroup(){
+        return dataBase.studentGroupDB;
+    }
 
-//    public List<StudentsGroup> getStudentGroup() {
-//        return dataBase.studentGroupDB;
-//    }
 
 }

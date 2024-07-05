@@ -12,17 +12,13 @@ public class StudentGroupController {
     private TeachersController teacherService = new TeachersController();
 
 
-    private StudentsGroup createGroup(Teacher teacher, List<Student> students){
-        return service.createGroup(teacher, students);
-    }
-
-
-    public StudentsGroup getStudentGroup(int teacher, List<Integer> s){
+    public StudentsGroup getStudentGroup(int teacher, List<Integer> s) {
         return service.getStudentGroup(teacherService.getById(teacher), s);
     }
 
-
-
+    public List<StudentsGroup> getAllStudentsGroup() {
+        return service.getAllStudentsGroup();
+    }
 
 
 }
