@@ -18,9 +18,9 @@ public class StudentsGroup {
         StudentsGroup.id = dataBase.studentGroupDB.size()+1;
     }
 
-    public StudentsGroup(Teacher t){
-        this.teacher = t;
-        StudentsGroup.id = dataBase.studentGroupDB.size() + 1;
-    }
+//    public StudentsGroup(Teacher t){
+//        this.teacher = t;
+//        StudentsGroup.id = dataBase.studentGroupDB.size() + 1;
+//    }
 
 }

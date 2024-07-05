@@ -9,7 +9,7 @@ import java.util.List;
 
 public class StudentGroupController {
     private StudentGroupService service = new StudentGroupService();
-    private TeachersController tService = new TeachersController();
+    private TeachersController teacherService = new TeachersController();
 
 
     private StudentsGroup createGroup(Teacher teacher, List<Student> students){
@@ -17,8 +17,8 @@ public class StudentGroupController {
     }
 
 
-    public List<StudentsGroup> getStudentGroup(){
-        return service.getStudentGroup();
+    public StudentsGroup getStudentGroup(int teacher, List<Integer> s){
+        return service.getStudentGroup(teacherService.getById(teacher), s);
     }
 
 
